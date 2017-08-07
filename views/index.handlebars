@@ -1,0 +1,65 @@
+
+<div class = "container">
+<div class = "row">
+<h1>Burgers To Eat</h1>
+<img src="assets/img/burger.JPG" alt="screenshot">
+</div>
+</div>
+<div class = "container">
+  <div class = "row">
+    <div class = "col-md-6">
+    <ul>
+      {{#each burger}}
+      {{#unless this.devoured}}
+        <li>
+          <p>
+            {{this.id}}{{this.burger_name}}
+
+
+
+<form action="/{{this.id}}?_method=put" method="POST">
+          <input type="hidden" name="id" value="{{this.id}}">
+          <button type="submit">Devour</button>
+        </form>
+
+
+
+
+
+          </p>
+        </li>
+        {{/unless}}
+      {{/each}}
+    </ul>
+    </div>
+
+
+    <div class = "col-md-6">
+    <h1>should be on the right side.  Home of deleted burgers.</h1>
+
+<ul>
+      {{#each burger}}
+      {{#if this.devoured}}
+        <li>
+          <p>
+           {{this.id}} {{this.burger_name}}
+
+          </p>
+        </li>
+        {{/if}}
+      {{/each}}
+    </ul>
+
+
+
+
+
+    </div>
+  </div>
+</div>
+
+<h2>Add a Burger to Eat</h2>
+<form method="POST" action="/" class="button-size">
+  <textarea type="text" name="burger"></textarea>
+  <button type="submit">Submit</button>
+</form>
