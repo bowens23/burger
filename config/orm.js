@@ -47,7 +47,8 @@ var orm = {
      }); 
    }, 
 
-///www is a generic name of a function that comes from 
+///www is a generic name of a function that comes from the models page.  
+//i named it www to emphasize that it is its order in the other function
    update: function(baz, www){
 	var mySQLQuery = "UPDATE burgers SET devoured = 1 WHERE id = "+baz+""; 
 
